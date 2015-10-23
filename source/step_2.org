@@ -162,6 +162,21 @@ There are 12 different programming challenges, each a little harder than the one
 	- 7. Repeat step 6.
 
 - For additional credit, add instructions to disarm the alarm without setting it off by holding down the button. 
+** Badge It Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Use the 'Snipping Tool' to take a picture of your flowchart. Upload the challenges 'A to E' for the Silver Badge.
+** Badge It Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Upload Challenges 'F to H' flowcharts.      
+** Badge It Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Upload all of the flowchart challenges(I to K), including the Final challenge.
 
 [[./index.html][Return to homepage]]
 

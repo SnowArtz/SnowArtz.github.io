@@ -107,32 +107,34 @@ In a car, a circuit is needed to ensure that the airbags only deploy when there 
 :END:
 - Over the past year, you learned about electronics by making different projects that have been supplied to you. In this unit, you'll be equipped with diagnostic skills to further improve your ability to fix problems with circuits when they occur, to create and upload original programs to circuits and to create circuits without having to use the chemical etch tank. 
 - If you want some additional help, try reading through [[./resources/multimeters.pdf][**this**]] short guide to using a multimeter.
-** The puzzle boxes
+** The puzzle boxes and Boards
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-- There are 10 different puzzle boxes, labelled a-j. Inside each are components, soldered to Machine screws (bolts with screwdriver heads). You will need to use the different settings on the multimeter as well as your ingenuity and knowledge of electronics to identify the contents of each. Can you identify the contents of the Yin-Yang box?
-- **a:** This box contains a 10k and a 330 Ohm resistor. Which two pins are each resistor connected to?
+- There are 7 different circuit boards labelled A - G with faults on them. There are also 3 different puzzle boxes with components to test, labelled C,H,I. Inside the boxes are components, soldered to Machine screws (bolts with screwdriver heads). You will need to use the different settings on the multimeter as well as your ingenuity and knowledge of electronics to test the contents of each.
+[[./img/BoardA.jpg]]
+- The PCB's have a number of faults on them, here is a list of the possible faults you will find:
 
-- **b:** This box also contains two resistors. What are their values, and which pins are they connected to?
+    1. Voltage regulator is the wrong way around.
+    2. There is a dry joint (the solder does not go all the way around the component).
+    3. A track has been lifted off the board.
+    4. The 8-pin Chip carrier is the wrong way around.
+    5. There is a short circuit (components that are not supposed to be joined are connected).
+    6. There is an LED the wrong way around.
+    7. Diode is the wrong way around.
 
-- **c:** An [[http://en.wikipedia.org/wiki/Photoresistor][LDR]] and something else is in here. LDRs typically cary in resistance from 400 to 2M (2 million) Ohms, depending on the amount they are exposed to: More light = less resistance.
+- *Open a .txt (NotePad) file and record which board has which fault.*
+- Now move onto the puzzle boxes below and record your findings in the *same .txt file*.
+
+ **Box C:** An [[http://en.wikipedia.org/wiki/Photoresistor][LDR]] and something else is in here. LDRs typically have a resistance value from 400 to 2M (2 million) Ohms, depending on the amount they are exposed to: More light = less resistance.
 
 	i. Read the resistance across the LDR, and write it down.
-
+[[./img/LightLDR.jpg]]
 	ii. Put your finger over the LDR and read the resistance again.
-
+[[./img/DarkLDR.jpg]]
 	iii. What is the value of the other resistor in the box?
 
-- **d:** Where's a [[http://simple.wikipedia.org/wiki/Diode][Diode]] symbol on a multimeter - get a rectifier diode from the component drawers to investigate how they are picked up with a meter (remember, they only allow current to flow in [[http://en.wikipedia.org/wiki/One_Direction][one direction]]). Which pins are the two diodes connected to, and which way are they facing inside the box? Make a sketch showing the components in this box, and indicating which way any diodes are facing. 
-
-- **f:** Connect the upturned probes to a 12V [[http://simple.wikipedia.org/wiki/Direct_Current][DC]] power supply. Using a [[http://simple.wikipedia.org/wiki/Multimeter][Multimeter]], determine what [[http://simple.wikipedia.org/wiki/Voltage][potential difference]] is there between the 0V terminal and the other terminals.
-
-- **g:** Connect a 12V DC power supply as indicated on the box. Inside is a simple LED torch circuit. 
-
-	i. Measure and record the voltage at each of the points, by putting the Common (black) probe on 0V, and touching the red probe at each terminal, one at a time. 
-
-- **h:** The component in here is called a [[http://simple.wikipedia.org/wiki/Potentiometer][potentiometer]]. By turning the dial, the resistance between its 3 pins can be changed.
+ **Box H:** The component in here is called a [[http://simple.wikipedia.org/wiki/Potentiometer][potentiometer]]. By turning the dial, the resistance between its 3 pins can be changed.
 
 	i. What is the resistance between pins 1 and 3? 
 
@@ -140,10 +142,25 @@ In a car, a circuit is needed to ensure that the airbags only deploy when there 
 
 	iii. Turn the potentiometer wiper to the left and right notches marked near the dial and measure the resistance at each point.
 
-- **i:** The green component is called a thermistor. Its resistance changes in response to temperature. 	
+ **Box I:** The green component is called a thermistor(Thermal Resistor). Its resistance changes in response to temperature. 	
 
-	The thermistor is wired between two of the screws, as is a normal resistor. Work out how the box is wired up.
-	(tip: You should be able to put your finger lightly on the thermistor to make its resistance change)
+	i. The thermistor is wired between two of the screws, as is a normal resistor. Work out how the box is wired up.
+	ii. *(tip: You should be able to put your finger lightly on the thermistor to make its resistance change).
 
+** Badge It Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Correctly* complete 3 of the 'board fault' tasks and 1 of the 'puzzle box' tests.
+** Badge It Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Correctly* complete 5 of the 'board fault' tasks and 2 of the 'puzzle box' tests.
+** Badge It Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- *Correctly* complete all of the 'board fault' tasks and all of the 'puzzle box' tests.
 
  [[./index.html][Return to homepage]]

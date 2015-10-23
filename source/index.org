@@ -33,10 +33,6 @@
 :HTML_CONTAINER_CLASS: activity
 :END:
 
-* [[./resources/answer_sheet.docx][Answer Sheet download]]
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: activity
-:END:
 * [[./assess.html][Achievements - the badges]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity

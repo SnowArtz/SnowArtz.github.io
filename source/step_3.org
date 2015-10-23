@@ -126,6 +126,21 @@ In a car, a circuit is needed to ensure that the airbags only deploy when there 
 **4:** 555 Timer challenge - this is a very challenging task! Run the simulation - what happens? When designing, aim to pack the components into the smallest possible space. 
 - HINT A: Remember Pin 1 in the top-left corner of the chip, and that you then count down and round in a horseshoe shape after that. Pin 8 is the top-right hand corner pin.
 - HINT B: Don't forget to use a chip carrier, and not to solder your 555 timer straight to the board. 
+** Badge It Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Using the 'Snipping Tool', take a picture of your first completed DIYlc circuit in step 1.
+** Badge It Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Upload 'snipped' pictures of steps 2 and 3.
+** Badge It Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Complete the 555 timer challenge and upload the 'snipped' picture of your complete stripboard.
 
 [[./index.html][Return to homepage]]
 
