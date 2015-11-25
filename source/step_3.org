@@ -114,7 +114,6 @@ In a car, a circuit is needed to ensure that the airbags only deploy when there 
 :END:
 - Start off by operning the Circuit Wizard file located over at: **G:\Systems and Control\Year 8\1 - The Challenges\Stripboard Tasks.cwz**, or download it directly from [[./resources/sboard_tasks.cwz][**here**]].
 - For each of the circuit diagrams, use DIYlc to create a stripboard design, so you could make these designs in real life.
-- Of the four designs, you should solder together two of them for yourself, to see the results of your design work.
 
 **1:** Using DIYlc, design a simple LED light. When complete, modify the design on Circuit Wizard to include a switch.
 
@@ -126,6 +125,8 @@ In a car, a circuit is needed to ensure that the airbags only deploy when there 
 **4:** 555 Timer challenge - this is a very challenging task! Run the simulation - what happens? When designing, aim to pack the components into the smallest possible space. 
 - HINT A: Remember Pin 1 in the top-left corner of the chip, and that you then count down and round in a horseshoe shape after that. Pin 8 is the top-right hand corner pin.
 - HINT B: Don't forget to use a chip carrier, and not to solder your 555 timer straight to the board. 
+
+**5:** Once you have completed the 555 timer design, you can build your own using stripboard. You can find the instructions for this by clicking [[https://www.bournetoinvent.com/projects/X-SC-Extension/Pages/4.html][here]] . 
 ** Badge It Silver
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
