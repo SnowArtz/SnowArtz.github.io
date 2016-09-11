@@ -113,6 +113,11 @@ In a car, a circuit is needed to ensure that the airbags only deploy when there 
 
 - You can download the Circuit Wizard file which contains the circuit that is inside the program box from [[./resources/program_box.cwz][here]]. It also has an example PIC program to get you started; well worth a read!
 
+
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZxuAZZn1_kE" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
 ** The programming boxes
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try

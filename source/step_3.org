@@ -115,6 +115,10 @@ In a car, a circuit is needed to ensure that the airbags only deploy when there 
 - Start off by operning the Circuit Wizard file located over at: **G:\Systems and Control\Year 8\1 - The Challenges\Stripboard Tasks.cwz**, or download it directly from [[./resources/sboard_tasks.cwz][**here**]].
 - For each of the circuit diagrams, use DIYlc to create a stripboard design, so you could make these designs in real life.
 
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0tYvdN8crVs" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
 **1:** Using DIYlc, design a simple LED light. When complete, modify the design on Circuit Wizard to include a switch.
 
 **2:** This time, there are 3 LEDs to connect together. To make this design more compact, you may wish to use the spot face cutter.
