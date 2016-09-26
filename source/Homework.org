@@ -1,0 +1,140 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+BEGIN_COMMENT
+#+STYLE: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+END_COMMENT
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: The Puzzle Boxes
+#+AUTHOR: Stephen Brown
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/stsb11/challenges">Fork me on GitHub</a>
+</div>
+<center>
+<img src='img/puzzle.jpg' width=33%>
+</center>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:      
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+e* Introduction
+[[file:img/pic.jpg]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: intro
+:END:
+** What are PIC chips?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+Peripheral Interface Controllers are small silicon chips which can be programmed to perform useful tasks.
+In school, we tend to use Genie branded chips, like the C08 model you will use in this project. Others (e.g. PICAXE) are available.
+PIC chips allow you connect different inputs (e.g. switches) and outputs (e.g. LEDs, motors and speakers), and to control them using flowcharts.
+Chips such as these can be found everywhere in consumer electronic products, from toasters to cars. 
+
+While they might not look like much, there is more computational power in a single PIC chip used in school than there was in the space shuttle that went to the moon in the 60's!
+** When would I use a PIC chip?
+Imagine you wanted to make a flashing bike light; using an LED and a switch alone, you'd need to manually push and release the button to get the flashing effect. A PIC chip could be programmed to turn the LED off and on once a second.
+In a board game, you might want to have an electronic dice to roll numbers from 1 to 6 for you. 
+In a car, a circuit is needed to ensure that the airbags only deploy when there is a sudden change in speed, AND the passenger is wearing their seatbelt, AND the front or rear bumper has been struck. PIC chips can carry out their instructions very quickly, performing around 1000 instructions per second - as such, they can react far more quickly than a person can. 
+* Homework Tasks
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** 1. Research it
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+The board that we looked and diagnosed the seven faults has several interesting components.
+Answer the following questions on these components:
+- Why is the integrated chip on the board called a Genie 08?
+- How many inputs and outputs does it have?
+- Why do we use integrated chips? What are the advantages and disadvantages of them?
+- What is a voltage regulator and why do we use them?
+- What is a diode and also why does this circuit need one?
+
+  Upload your work to the first badge in the homework section of BourneToLearn.com
+** 2. Describe it
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+- The multimeter is the engineer's best friend. 
+- Write a narrative describing how you would measure the resistor of a mystery resistor.
+- This is a *literacy* task so before submitted your work check spelling, grammar and punctuation.
+
+  Upload your work to the second badge in the homework section of BourneToLearn.com
+
+** 3. Design it
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+- Read [[http://www.technologystudent.com/pcb/cirdia2.htm][here]] and [[http://www.technologystudent.com/pcb/cirdia1.htm][here]].
+- Then draw the first two PCB circuits from http://www.technologystudent.com/pcb/cirdia3.htm
+- This could be handed as either an image of your drawings or hand the paper copy, with your name on it, to your teacher.
+
+  Upload your work to the third badge in the homework section of BourneToLearn.com
+
