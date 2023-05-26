@@ -10,6 +10,18 @@
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center; }
   .todo   { font-family: monospace; color: red; }
+  table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        padding: 8px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
   .done   { color: green; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
@@ -78,12 +90,12 @@
    { text-align: right; font-size: 70%; white-space: nowrap; }
   textarea { overflow-x: auto; }
   .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
+  .code-highlighted { background-color: #16B8E4; }
   .org-info-js_info-navigation { border-style: none; }
   #org-info-js_console-label
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
+    { background-color: #16B8E4; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
@@ -137,12 +149,15 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Proyecto chocolatera</h1>
+<h1 class="title">Balanza digital</h1>
 <div id="table-of-contents">
 <h2>Tabla de contenidos</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Descripción general</a>
+<li><a href="#sec-1">1. Balanza digital</a>
+  <li><a href="#sec-2">2. Esquemático</a>
+    <li><a href="#sec-3">3. Macroalgoritmo</a>
+      <li><a href="#sec-4">4. Calibración</a>
 <ul>
 
 </ul>
@@ -151,33 +166,172 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div class=ribbon>
-<a href="https://github.com/stsb11/challenges">Fork me on GitHub</a>
+<a href="./index.html">Volver al inicio</a>
 </div>
 <center>
-<img src='img/chocolate.png' width=66%>
+<img src='img/Foto_balanza.jpeg' width=66%>
 </center>
 
 <div id="outline-container-sec-1" class="outline-2 activity">
-<h2 id="sec-1"><span class="section-number-2">1</span> Descripción general</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> Balanza digital</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
-<li> El proyecto en cuestión es una innovadora chocolatera de diseño avanzado que integra diversos procesos en su funcionamiento para garantizar la producción de chocolate de alta calidad. La máquina está dotada de una serie de sensores de última generación capaces de medir múltiples características esenciales durante el proceso de elaboración del chocolate. Entre estas características se incluyen la temperatura, el peso del agua y las revoluciones por minuto (RPM) del mezclador, las cuales son vitales para garantizar la consistencia y la calidad del producto final.</p>
-</li>
-<li>En el corazón de la chocolatera se encuentra un sistema inteligente de dispensado de agua, que permite suministrar la cantidad precisa necesaria para cada lote de chocolate. Este sistema está diseñado para proporcionar un control extremadamente preciso sobre el contenido de agua en la mezcla, lo que es esencial para mantener la textura y sabor correctos del chocolate. Además, la máquina cuenta con la opción de tarar la balanza, lo que proporciona una precisión de medición aún mayor y evita cualquier error que pueda surgir debido a desequilibrios en la balanza.</p>
-</li>
+<li> Esta balanza digital es un dispositivo diseñado para medir pesos con precisión y facilidad. Funciona a través de la combinación de cuatro componentes principales: el módulo HX711, celda de carga de 1 kg,  Arduino Uno y una pantalla LCD.
+  </li>
+<li>El módulo HX711 amplifica y convierte la señal eléctrica generada por la celda de carga en una señal digital que puede ser procesada por el Arduino Uno. La celda de carga es un componente sensible a la fuerza que se encarga de medir el peso aplicado.
+  </li>
 
-<li>El diseño de la chocolatera se completa con una serie de características adicionales que elevan su funcionalidad al siguiente nivel. Estas incluyen una serie de modos de operación programables que permiten al usuario adaptar el proceso de producción a sus necesidades específicas, así como una interfaz de usuario intuitiva que simplifica la gestión de todos estos complejos procesos. De este modo, la chocolatera se convierte en un equipo de producción de chocolate altamente adaptable y fácil de usar, capaz de satisfacer las demandas de cualquier entorno de producción, desde la producción artesanal hasta la producción a gran escala.</p>
-</li>
+<li>El Arduino Uno, a su vez, recibe y procesa la señal digital generada por el módulo HX711 y, con la ayuda de un programa de código abierto, calcula el peso y lo muestra en la pantalla LCD. La pantalla LCD es una pantalla de cristal líquido que muestra la lectura de peso en tiempo real y permite visualizar el peso de un objeto de forma clara y fácil de leer.
+  </li>
 
-
+<li>    Esta combinación de componentes ofrece una solución precisa y confiable para medir pesos en una amplia variedad de aplicaciones, incluyendo la medición de peso en un laboratorio o en una tienda. Además, su diseño es compacto y fácil de usar, lo que lo hace ideal para su uso en diferentes entornos.
+   </li>
 </ul>
 </div>
 
+<div id="outline-container-sec-1-1" class="outline-3 build">
+<h3 id="sec-2">Esquemático</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+
+  <center>
+<img src='img/Esquematico_balanza.jpeg' width=66%>
+</center>
 
 
+
+</ul>
+
+Lista de materiales: 
 <p>
-<a href="./index.html">Volver al inicio</a>
+<b>1: Convertidor de analógico a digital de 24 bits para básculas de peso (HX711)</b> 
+<ul>
+    <li>Suministro de voltaje: 2.6V-5.5V</li>
+    <li>Corriente: &lt;&lt;1.6mA</li>
+    <li>Regulador de fuente de alimentación en chip para celda de carga y fuente de alimentación analógica ADC</li>
+    <li>Oscilador en chip que no requiere ningún componente externo con cristal externo opcional</li>
+    <li>Temperatura de operación: -40-85°C</li>
+    <li>Rechazo de suministro simultáneo de 50 y 60 Hz</li>
+</ul>
 </p>
+<p>
+<b>2: Celda de carga 1kg</b> 
+<ul>
+    <li>Rango 0-1kg</li>
+    <li>Voltaje de excitación: 5-15V</li>
+    <li>Impedancia de entrada 1055±15Ω</li>
+    <li>Impedancia de salida 1000±5Ω</li>
+    <li>Sensibilidad de salida: 1.0±0.15mV/V</li>
+    <li>Salida: Señal análoga</li>
+    <li>Desplazamiento del cero:0.05/0.03 30min %F.S</li>
+    <li>Capacidad de sobrecarga: 200 %F.S</li>
+</ul>
+</p>
+<p>
+<b>3: Arduino</b> 
+
+</p>
+<p>
+<b>4: Pantalla LCD</b> 
+</p>
+
+
+
+En general, un sensor de peso, también conocido como célula de carga, se conecta a un Arduino a través de un módulo amplificador HX711. El HX711 es necesario porque las señales de la célula de carga son muy pequeñas y necesitan ser amplificadas para que el Arduino pueda leerlas. Normalmente, la célula de carga tiene cuatro cables: rojo (alimentación), negro (tierra), verde (señal +) y blanco (señal -). Estos se conectan a los correspondientes pines del módulo HX711. Luego, el módulo HX711 se conecta al Arduino: el pin de datos (DT o DOUT) del HX711 se conecta a un pin digital del Arduino, y el pin de reloj (SCK) del HX711 se conecta a otro pin digital del Arduino.
+
+<ul>
+    <li>Conexión de los componentes: Para utilizar la balanza, es necesario conectar la celda de carga al módulo HX711, y el módulo HX711 al Arduino. Las conexiones eléctricas requeridas son las siguientes:</li>
+        <ul>
+            <li>Celda de carga: conectar los cables rojo y negro de la celda de carga a los pines E+ y E- del módulo HX711, respectivamente. Conectar los cables blanco y verde de la celda de carga a los pines A+ y A- del módulo HX711, respectivamente.</li>
+            <li>Módulo HX711: conectar los pines DT y SCK del módulo HX711 a los pines digitales 3 y 2 del Arduino, respectivamente. Conectar los pines VCC y GND del módulo HX711 a los pines de 5V y GND del Arduino, respectivamente.</li>
+        </ul>
+    <li>Calibración de la balanza: Antes de utilizar la balanza, es necesario realizar una calibración para asegurarse de que las mediciones sean precisas y confiables. Para calibrar la balanza, es necesario seguir los siguientes pasos:</li>
+        <ul>
+            <li>Colocar un objeto de peso conocido sobre la plataforma de la balanza.</li>
+            <li>Registrar la lectura de peso en el programa de Arduino.</li>
+            <li>Utilizar la función de ajuste de la balanza para ajustar la constante de calibración. La constante de calibración se utiliza para convertir las lecturas de voltaje del módulo HX711 en lecturas de peso en kilogramos o libras. La función de ajuste utiliza las lecturas de peso conocido y sus correspondientes lecturas de voltaje para calcular la constante de calibración.</li>
+        </ul>
+</ul>
+
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3 run">
+<h3 id="sec-3">Macroalgoritmo</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+
+  <center>
+<img src='img/Macroalgoritmo_balanza.jpeg' width=66%>
+</center>
+
+</ul>
+
+
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3 code">
+<h3 id="sec-4">Calibración</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+
+
+
+
+
+
+<p>A continuación se presenta la curva de calibración de la balanza:</p>
+
+<center>
+<img src='img/Calibracion_balanza.jpeg' width=66%>
+</center>
+<center>
+<table>
+    <caption>Datos Calibración balanza: </caption>
+    <tr>
+        <th>Peso real (g)</th>
+        <th>Peso balanza (g)</th>
+    </tr>
+    <tr>
+        <td>99.4</td>
+        <td>99.54</td>
+    </tr>
+    <tr>
+        <td>200</td>
+        <td>199.86</td>
+    </tr>
+    <tr>
+        <td>300</td>
+        <td>300.22</td>
+    </tr>
+    <tr>
+        <td>400</td>
+        <td>399.82</td>
+    </tr>
+    <tr>
+        <td>491</td>
+        <td>492.2</td>
+    </tr>
+    <tr>
+        <td>591</td>
+        <td>592.6</td>
+    </tr>
+    <tr>
+        <td>690</td>
+        <td>692.38</td>
+    </tr>
+    <tr>
+        <td>791</td>
+        <td>792.62</td>
+    </tr>
+</table>
+</center>
+
+</div>
+</div>
+
+
 </li>
 </ul>
 
