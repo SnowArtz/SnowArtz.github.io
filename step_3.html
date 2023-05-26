@@ -8,6 +8,18 @@
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
+  table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        padding: 8px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
   .title  { text-align: center; }
   .todo   { font-family: monospace; color: red; }
   .done   { color: green; }
@@ -179,7 +191,7 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Stripboard Circuit Design</h1>
+<h1 class="title">Dispensador</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -196,102 +208,189 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div class=ribbon>
-<a href="https://github.com/stsb11/challenges">Fork me on GitHub</a>
+  <a href="./index.html">Return to homepage</a>
 </div>
 <center>
-<img src='img/sboard.jpg' width=33%>
+<img src='img/Dispensador1.jpg' width=50%>
 </center>
 
-<div id="outline-container-sec-1" class="outline-2 activity">
-<h2 id="sec-1"><span class="section-number-2">1</span> Stripboard Circuit Design</h2>
+<div id="outline-container-sec-1" class="outline-2 ">
+<h2 id="sec-1"><span class="section-number-2">1</span> Descripción General</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
-<li>Imagine you're an electronics hobbyist, and you'd like to build a circuit from parts you've got laying around. Chances are you don't want to spend £350 on an etch tank, £30 on chemicals and make a mess of your kitchen sink. Instead, one can purchase <a href="http://en.wikipedia.org/wiki/Stripboard">stripboard</a> from electronics shops (e.g. <a href="http://www.maplin.co.uk/p/stripboard-fl17t">Maplin</a>), which can be used to create compact, permanent circuits at home. 
+<li> La principal función del subsistema de dispensador de agua es distribuir y controlar la cantidad de agua que se dispensa para obtener una cantidad deseada con alta precisión. 
 </li>
-<li>The creatively titled stripboard is a board which has thin strips of copper running along it, with each strip containing dozens of 1mm holes. By soldering components between different columns, and using a small drill bit on a handle (known as a <a href="http://www.maplin.co.uk/p/spot-face-cutter-fl25c">spot face cutter</a>), almost any circuit can be quickly created. This requires a steady hand though, as it is easy to accidentally solder tracks together. 
+<li> El dispensador de agua utiliza un módulo L298n para controlar la velocidad de la bomba a través de pulsos PWM (modulación por ancho de pulso), que son proporcionados por un Arduino Uno. Este módulo recibe su alimentación de la red eléctrica a través de un regulador a 12V, garantizando un funcionamiento eficiente y constante.
 </li>
-<li>Before you start the tasks, you'll need to load up the DIY layout creator. This can be found in the open drive, over in <b><b>G:\Systems and Control\Student Home software\DIYlc\diylc.exe</b></b>, or alternatively can be downloaded for home use over at the creator's homepage, <a href="http://code.google.com/p/diy-layout-creator/">here</a>.
+<li> El dispensador de agua incorpora un sensor de flujo YF-S201 que opera mediante el efecto Hall, enviando pulsos que son procesados por el Arduino Uno. Este dispositivo permite al sistema conocer la cantidad de agua que se está dispensando en tiempo real, permitiendo que el Arduino Uno controle el módulo L298n para detener el suministro de agua cuando sea necesario. Esto asegura un uso eficiente del agua y evita desperdicios.
 </li>
 </ul>
 </div>
+<div id="outline-container-sec-1-1" class="outline-3 build">
+<h3 id="sec-1-1">Esquemático</h3>
+<center>
+<img src='img/Dispensador.png' width=80%>
+</center>
+<ul>
+<p><b>1. Arduino</b></p>
+    <ul>
+        <li>Tipo y modelo de placa: Arduino Uno</li>
+        <li>Microcontrolador: ATmega328P</li>
+        <li>Programación: Lenguaje C++ y entorno de programación Arduino IDE</li>
+        <li>Rango de voltaje: 5VDC</li>
+        <li>Rango de temperatura: -40°C a 85°C</li>
+    </ul>
+</li>
+<p> <b>2. Sensor de flujo (Yf-S201)</b>   </p>
+
+    <ul>
+        <li>Suministro de voltaje: 5 V - 18 V</li>
+        <li>Temperatura de operación: -25 - 80 °C</li>
+        <li>Máxima presión de agua: 2 Mpa</li>
+        <li>Rango de operación de flujo: 1 - 30 l/min</li>
+    </ul>
+    <p> <b>3. Mini bomba electrosumergible</b>   </p>
+
+    <ul>
+        <li>Suministro de voltaje: 2.5 V - 6 V</li>
+        <li>Caudal: 1.3 - 2 l/min</li>
+        <li>Elevación: 40 - 110 cm</li>
+    </ul>
+    <p> <b>4. Pantalla LCD</b>   </p>
+
+    <ul>
+        <li>Dimensiones: 16 caracteres por 2 líneas de texto; tamaño de la pantalla: 80mm x 36mm x 12mm</li>
+        <li>Tipo de pantalla: Pantalla LCD alfanumérica</li>
+        <li>Tipo de luz de fondo: Luz de fondo LED de color azul</li>
+        <li>Voltaje de operación: 5V DC</li>
+        <li>Corriente de operación: Menos de 1mA en espera; 2mA a plena carga</li>
+        <li>Interfaz: Interfaz de comunicación paralela de 4 bits</li>
+    </ul>
+</ul>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 run">
+<ul class="org-ul">
+<p>En el esquemático anterior se pueden encontrar las conexiones necesarias para llevar acabo la implementación del montaje del dispensador. <br>  El sensor de flujo requiere una conexión a 5V, una conexión a GND y una conexión a un pin del arduino que permita interrupciones, a través de estas interrupciones se contaran los pulsos emitidos por el sensor de hall para poder conocer la cantidad de agua que ha pasado hasta el momento. <br> Por su parte el puente H L298N requiere una conexión a una fuente de alimentación externa para proveer la cantidad de corriente necesaria al motor DC, por su parte requiere 3 pines de conexión al arduino, uno de enable y los otros dos para indicar la dirección del mismo.</p>
+
+<h3 id="sec-1">Macroalgoritmo</h3>
+<center>
+<img src='img/mermaid-diagram-2023-05-26-001447.png' width=100%>
+</center>
+
+
 <div id="outline-container-sec-1-1" class="outline-3 code">
-<h3 id="sec-1-1">The design challenges</h3>
-<div class="outline-text-3" id="text-1-1">
-<ul class="org-ul">
-<li>Start off by operning the Circuit Wizard file located over at: <b><b>G:\Systems and Control\Year 8\1 - The Challenges\Stripboard Tasks.cwz</b></b>, or download it directly from <a href="./resources/sboard_tasks.cwz"><b><b>here</b></b></a>.
-</li>
-<li>For each of the circuit diagrams, use DIYlc to create a stripboard design, so you could make these designs in real life.
-</li>
-</ul>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0tYvdN8crVs" frameborder="0" allowfullscreen></iframe>
+<h3 id="sec-1">Calibración</h3>
+<center>
+<img src='img/CurvaCalibracionG8 (1).jpeg' width=100%>
+</center>
+
+<table>
+    <caption><b>Datos de calibración mini bomba</b></caption>
+    <thead>
+        <tr>
+            <th>Voltaje PWM (V)</th>
+            <th>Caudal (ml/s)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0,00</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0,49</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0,98</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>1,47</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>1,96</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2,45</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2,94</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2,96</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2,98</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>3,00</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>3,02</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>3,04</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>3,14</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>3,24</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>3,29</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>3,33</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>3,39</td>
+            <td>10,3</td>
+        </tr>
+        <tr>
+            <td>3,43</td>
+            <td>15,36</td>
+        </tr>
+        <tr>
+            <td>3,92</td>
+            <td>16,09</td>
+        </tr>
+        <tr>
+            <td>4,41</td>
+            <td>18,32</td>
+        </tr>
+        <tr>
+            <td>4,90</td>
+            <td>20,54</td>
+        </tr>
+        <tr>
+            <td>5,00</td>
+            <td>24,92</td>
+        </tr>
+    </tbody>
+</table>
 
 <p>
-<b><b>1:</b></b> Using DIYlc, design a simple LED light. When complete, modify the design on Circuit Wizard to include a switch.
 </p>
 
-<p>
-<b><b>2:</b></b> This time, there are 3 LEDs to connect together. To make this design more compact, you may wish to use the spot face cutter.
-</p>
-
-<p>
-<b><b>3:</b></b> This circuit uses a pair of resistors set up as something known as a Potential divider. While the simulation is running, click on the LDR and adjust the light level by moving the slider. When does the LED come on? When could this circuit be useful in real life?
-</p>
-<ul class="org-ul">
-<li>HINT: If you intend to solder this together, when holding a BC548B with the letters facing you, the leftmost pin is the collector and the middle is the base.
-</li>
-</ul>
-
-<p>
-<b><b>4:</b></b> 555 Timer challenge - this is a very challenging task! Run the simulation - what happens? When designing, aim to pack the components into the smallest possible space. 
-</p>
-<ul class="org-ul">
-<li>HINT A: Remember Pin 1 in the top-left corner of the chip, and that you then count down and round in a horseshoe shape after that. Pin 8 is the top-right hand corner pin.
-</li>
-<li>HINT B: Don't forget to use a chip carrier, and not to solder your 555 timer straight to the board. 
-</li>
-</ul>
-
-<p>
-<b><b>5:</b></b> Once you have completed the 555 timer design, you can build your own using stripboard. You can find the instructions for this by clicking <a href="https://www.bournetoinvent.com/projects/X-SC-Extension/Pages/4.html">here</a> . 
-</p>
-</div>
-</div>
-<div id="outline-container-sec-1-2" class="outline-3 badge">
-<h3 id="sec-1-2">Badge It Silver</h3>
-<div class="outline-text-3" id="text-1-2">
-<ul class="org-ul">
-<li>Using the 'Snipping Tool', take a picture of your first completed DIYlc circuit in step 1.
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-3" class="outline-3 badge">
-<h3 id="sec-1-3">Badge It Gold</h3>
-<div class="outline-text-3" id="text-1-3">
-<ul class="org-ul">
-<li>Upload 'snipped' pictures of steps 2 and 3.
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-4" class="outline-3 badge">
-<h3 id="sec-1-4">Badge It Platinum</h3>
-<div class="outline-text-3" id="text-1-4">
-<ul class="org-ul">
-<li>Complete the 555 timer challenge and upload the 'snipped' picture of your complete stripboard.
-</li>
-</ul>
-
-<p>
-<a href="./index.html">Return to homepage</a>
-</p>
-</div>
-</div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
