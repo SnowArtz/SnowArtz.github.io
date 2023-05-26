@@ -3,13 +3,25 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>The Programming boxes</title>
+<title>The Puzzle Boxes</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center; }
   .todo   { font-family: monospace; color: red; }
+  table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        padding: 8px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
   .done   { color: green; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
@@ -78,12 +90,12 @@
    { text-align: right; font-size: 70%; white-space: nowrap; }
   textarea { overflow-x: auto; }
   .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
+  .code-highlighted { background-color: #16B8E4; }
   .org-info-js_info-navigation { border-style: none; }
   #org-info-js_console-label
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
+    { background-color: #16B8E4; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
@@ -137,175 +149,192 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">The Programming boxes</h1>
+<h1 class="title">Balanza digital</h1>
 <div id="table-of-contents">
-<h2>Table of Contents</h2>
+<h2>Tabla de contenidos</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. PIC Programming</a>
+<li><a href="#sec-1">1. Balanza digital</a>
+  <li><a href="#sec-2">2. Esquemático</a>
+    <li><a href="#sec-3">3. Macroalgoritmo</a>
+      <li><a href="#sec-4">4. Calibración</a>
 <ul>
-<li><a href="#sec-1-1">The programming boxes</a></li>
-<li><a href="#sec-1-2">Badge It Silver</a></li>
-<li><a href="#sec-1-3">Badge It Gold</a></li>
-<li><a href="#sec-1-4">Badge It Platinum</a></li>
+
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <div class=ribbon>
-<a href="https://github.com/stsb11/challenges">Fork me on GitHub</a>
+<a href="./index.html">Volver al inicio</a>
 </div>
 <center>
-<img src='img/program.jpg' width=33%>
+<img src='img/Foto_balanza.jpeg' width=66%>
 </center>
 
 <div id="outline-container-sec-1" class="outline-2 activity">
-<h2 id="sec-1"><span class="section-number-2">1</span> PIC Programming</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> Balanza digital</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
-<li>One of the most useful process components you will use in Systems engineering is a PIC chip. This are small silicon chips which you can write programs for, which will in turn allow you to take control of how your circuit behaves.
-</li>
+<li> Esta balanza digital es un dispositivo diseñado para medir pesos con precisión y facilidad. Funciona a través de la combinación de cuatro componentes principales: el módulo HX711, celda de carga de 1 kg,  Arduino Uno y una pantalla LCD.
+  </li>
+<li>El módulo HX711 amplifica y convierte la señal eléctrica generada por la celda de carga en una señal digital que puede ser procesada por el Arduino Uno. La celda de carga es un componente sensible a la fuerza que se encarga de medir el peso aplicado.
+  </li>
 
-<li>Using our pre-built programming boxes, you can see how a circuit can be re-purposed to perform an task you want. <a href="http://hackaday.com/">Hardware hackers</a> take everyday objects, and add electronics to them to create new original products from scrap materials - this is a great way to create innovative new products, and teaches you an enormous amount about Systems &amp; Control at the same time. 
-</li>
+<li>El Arduino Uno, a su vez, recibe y procesa la señal digital generada por el módulo HX711 y, con la ayuda de un programa de código abierto, calcula el peso y lo muestra en la pantalla LCD. La pantalla LCD es una pantalla de cristal líquido que muestra la lectura de peso en tiempo real y permite visualizar el peso de un objeto de forma clara y fácil de leer.
+  </li>
 
-<li>Your task is to produce a series of increasingly difficult programs to make the inputs and outputs in the programming boxes perform different jobs. 
-</li>
-
-<li>You can download the Circuit Wizard file which contains the circuit that is inside the program box from <a href="./resources/program_box.cwz">here</a>. It also has an example PIC program to get you started; well worth a read!
-</li>
+<li>    Esta combinación de componentes ofrece una solución precisa y confiable para medir pesos en una amplia variedad de aplicaciones, incluyendo la medición de peso en un laboratorio o en una tienda. Además, su diseño es compacto y fácil de usar, lo que lo hace ideal para su uso en diferentes entornos.
+   </li>
 </ul>
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZxuAZZn1_kE" frameborder="0" allowfullscreen></iframe>
 </div>
 
-<div id="outline-container-sec-1-1" class="outline-3 try">
-<h3 id="sec-1-1">The programming boxes</h3>
+<div id="outline-container-sec-1-1" class="outline-3 build">
+<h3 id="sec-2">Esquemático</h3>
 <div class="outline-text-3" id="text-1-1">
-<p>
-There are 12 different programming challenges, each a little harder than the one before it. You're not expected to complete them all (although if you can, you should take GCSE S&amp;C!).
-</p>
-
-<p>
-<b><b>a:</b></b> Bike light. Make a program that causes the LED lights to alternate on and off once a second when the unit is turned on. 
-</p>
-
-<p>
-<b><b>b:</b></b> Momentary LED torch. Make a program where holding down the button causes the LEDs to illuminate, and releasing it turns them off. 
-</p>
-
-<p>
-<b><b>c:</b></b> Toggle switched LED torch. Change the program so that the LEDs come on when the button is pushed once, and are turned off when pushed a second time.
-</p>
-
-<p>
-<b><b>d:</b></b> <a href="http://en.wikipedia.org/wiki/Morse_code">Morse code transmitter</a>. Make a program that will cause the piezo siren to beep (and the LEDs illuminate) when the button is pushed, to allow act as a Morse code transmitter. <b><b>Bonus marks</b></b> if you can make it transmit SOS when the button is pushed once.
-</p>
-
-<p>
-<b><b>e:</b></b> Night light. Write a program for the box that causes the LEDs to illuminate when it gets dark. 
-</p>
-
-<p>
-<b><b>f:</b></b> Night light Mk II. Modify your program so that your night light can also be turned on and off by the PTM switch.
-</p>
-
-<p>
-<b><b>g:</b></b> Music box. When the button is pushed, Happy birthday plays and the red LED is illuminated. When pushed while the LDR is covered, a different tune is played, and the green LED comes on. 
-</p>
-
-<p>
-<b><b>h:</b></b> Music box Mk II. The piezo plays a tone which goes up and down in response to the current light level. Even better, if the button has to be held down at the same time. 
-</p>
-
-<p>
-<b><b>i:</b></b> Personal alarm. Write a program that will make the piezo siren beep, and the LEDs flash on and off when the button is held down for 3 seconds. 
-</p>
-
-<p>
-<b><b>j:</b></b> Book alarm. The user places an object on top of the program box (so the LDR is in the dark). When the object is removed, the piezeo siren sounds and the LEDs to flash. 
-</p>
-
-<p>
-<b><b>k:</b></b> Free choice. Write your own program to utilise all the inputs and outputs, and write a short description of what it does.
-</p>
-
-<p>
-<b><b>Final challenge:</b></b> Write a program to control an alarm which (when armed) sits inside a cupboard or drawer, and goes off when it detects the drawer has been opened. It should work as follows:
-</p>
-
 <ul class="org-ul">
-<li>1. Green LED comes on
-</li>
 
-<li>2. When the button is pushed and held for 3 seconds, the green LED should blink on and off once a second and the piezo should beep at the same time for 5 seconds.
-</li>
+  <center>
+<img src='img/Esquematico_balanza.jpeg' width=66%>
+</center>
 
-<li>3. After 5 seconds, the green LED should go off, and the red LED should be turned on. 
-</li>
 
-<li>4. The current light level should be stored in a variable called "C".
-</li>
 
-<li>5. The value of C should be increased by 5. 
-</li>
-
-<li>6. Once a second, the current light level should be compared to the stored in "C". 
-
-<ul class="org-ul">
-<li>6a. IF the current light level goes above the value of C, then&#x2026;
-</li>
-
-<li>6b. The red and green LEDs should flash one after another, while the piezo siren beeps.
-</li>
-</ul>
-</li>
-
-<li>7. Repeat step 6.
-</li>
-
-<li>For additional credit, add instructions to disarm the alarm without setting it off by holding down the button. 
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-2" class="outline-3 badge">
-<h3 id="sec-1-2">Badge It Silver</h3>
-<div class="outline-text-3" id="text-1-2">
-<ul class="org-ul">
-<li>Use the 'Snipping Tool' to take a picture of your flowchart. Upload the challenges 'A to E' for the Silver Badge.
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-3" class="outline-3 badge">
-<h3 id="sec-1-3">Badge It Gold</h3>
-<div class="outline-text-3" id="text-1-3">
-<ul class="org-ul">
-<li>Upload Challenges 'F to H' flowcharts.      
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-4" class="outline-3 badge">
-<h3 id="sec-1-4">Badge It Platinum</h3>
-<div class="outline-text-3" id="text-1-4">
-<ul class="org-ul">
-<li>Upload all of the flowchart challenges(I to K), including the Final challenge.
-</li>
 </ul>
 
+Lista de materiales: 
 <p>
-<a href="./index.html">Return to homepage</a>
+<b>1: Convertidor de analógico a digital de 24 bits para básculas de peso (HX711)</b> 
+<ul>
+    <li>Suministro de voltaje: 2.6V-5.5V</li>
+    <li>Corriente: &lt;&lt;1.6mA</li>
+    <li>Regulador de fuente de alimentación en chip para celda de carga y fuente de alimentación analógica ADC</li>
+    <li>Oscilador en chip que no requiere ningún componente externo con cristal externo opcional</li>
+    <li>Temperatura de operación: -40-85°C</li>
+    <li>Rechazo de suministro simultáneo de 50 y 60 Hz</li>
+</ul>
 </p>
+<p>
+<b>2: Celda de carga 1kg</b> 
+<ul>
+    <li>Rango 0-1kg</li>
+    <li>Voltaje de excitación: 5-15V</li>
+    <li>Impedancia de entrada 1055±15Ω</li>
+    <li>Impedancia de salida 1000±5Ω</li>
+    <li>Sensibilidad de salida: 1.0±0.15mV/V</li>
+    <li>Salida: Señal análoga</li>
+    <li>Desplazamiento del cero:0.05/0.03 30min %F.S</li>
+    <li>Capacidad de sobrecarga: 200 %F.S</li>
+</ul>
+</p>
+<p>
+<b>3: Arduino</b> 
+
+</p>
+<p>
+<b>4: Pantalla LCD</b> 
+</p>
+
+
+
+En general, un sensor de peso, también conocido como célula de carga, se conecta a un Arduino a través de un módulo amplificador HX711. El HX711 es necesario porque las señales de la célula de carga son muy pequeñas y necesitan ser amplificadas para que el Arduino pueda leerlas. Normalmente, la célula de carga tiene cuatro cables: rojo (alimentación), negro (tierra), verde (señal +) y blanco (señal -). Estos se conectan a los correspondientes pines del módulo HX711. Luego, el módulo HX711 se conecta al Arduino: el pin de datos (DT o DOUT) del HX711 se conecta a un pin digital del Arduino, y el pin de reloj (SCK) del HX711 se conecta a otro pin digital del Arduino.
+
+<ul>
+    <li>Conexión de los componentes: Para utilizar la balanza, es necesario conectar la celda de carga al módulo HX711, y el módulo HX711 al Arduino. Las conexiones eléctricas requeridas son las siguientes:</li>
+        <ul>
+            <li>Celda de carga: conectar los cables rojo y negro de la celda de carga a los pines E+ y E- del módulo HX711, respectivamente. Conectar los cables blanco y verde de la celda de carga a los pines A+ y A- del módulo HX711, respectivamente.</li>
+            <li>Módulo HX711: conectar los pines DT y SCK del módulo HX711 a los pines digitales 3 y 2 del Arduino, respectivamente. Conectar los pines VCC y GND del módulo HX711 a los pines de 5V y GND del Arduino, respectivamente.</li>
+        </ul>
+    <li>Calibración de la balanza: Antes de utilizar la balanza, es necesario realizar una calibración para asegurarse de que las mediciones sean precisas y confiables. Para calibrar la balanza, es necesario seguir los siguientes pasos:</li>
+        <ul>
+            <li>Colocar un objeto de peso conocido sobre la plataforma de la balanza.</li>
+            <li>Registrar la lectura de peso en el programa de Arduino.</li>
+            <li>Utilizar la función de ajuste de la balanza para ajustar la constante de calibración. La constante de calibración se utiliza para convertir las lecturas de voltaje del módulo HX711 en lecturas de peso en kilogramos o libras. La función de ajuste utiliza las lecturas de peso conocido y sus correspondientes lecturas de voltaje para calcular la constante de calibración.</li>
+        </ul>
+</ul>
+
 </div>
 </div>
+
+<div id="outline-container-sec-1-2" class="outline-3 run">
+<h3 id="sec-3">Macroalgoritmo</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+
+  <center>
+<img src='img/Macroalgoritmo_balanza.jpeg' width=66%>
+</center>
+
+</ul>
+
+
 </div>
 </div>
-<div id="postamble" class="status">
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+
+<div id="outline-container-sec-1-3" class="outline-3 code">
+<h3 id="sec-4">Calibración</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+
+
+
+
+
+
+<p>A continuación se presenta la curva de calibración de la balanza:</p>
+
+<center>
+<img src='img/Calibracion_balanza.jpeg' width=66%>
+</center>
+<center>
+<table>
+    <caption>Datos Calibración balanza: </caption>
+    <tr>
+        <th>Peso real (g)</th>
+        <th>Peso balanza (g)</th>
+    </tr>
+    <tr>
+        <td>99.4</td>
+        <td>99.54</td>
+    </tr>
+    <tr>
+        <td>200</td>
+        <td>199.86</td>
+    </tr>
+    <tr>
+        <td>300</td>
+        <td>300.22</td>
+    </tr>
+    <tr>
+        <td>400</td>
+        <td>399.82</td>
+    </tr>
+    <tr>
+        <td>491</td>
+        <td>492.2</td>
+    </tr>
+    <tr>
+        <td>591</td>
+        <td>592.6</td>
+    </tr>
+    <tr>
+        <td>690</td>
+        <td>692.38</td>
+    </tr>
+    <tr>
+        <td>791</td>
+        <td>792.62</td>
+    </tr>
+</table>
+</center>
+
+</div>
+</div>
+
+
+</li>
+</ul>
+
 </div>
 </body>
 </html>
