@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>The Puzzle Boxes</title>
+<title>Mezclador</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
@@ -149,12 +149,12 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Balanza digital</h1>
+<h1 class="title">Mezclador</h1>
 <div id="table-of-contents">
 <h2>Tabla de contenidos</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Balanza digital</a>
+<li><a href="#sec-1">1. Mezclador</a>
   <li><a href="#sec-2">2. Esquemático</a>
     <li><a href="#sec-3">3. Macroalgoritmo</a>
       <li><a href="#sec-4">4. Calibración</a>
@@ -173,19 +173,18 @@ for the JavaScript code in this tag.
 </center>
 
 <div id="outline-container-sec-1" class="outline-2 activity">
-<h2 id="sec-1"><span class="section-number-2">1</span> Balanza digital</h2>
+<h2 id="sec-1"><span class="section-number-2">4</span> Mezclador</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
-<li> Esta balanza digital es un dispositivo diseñado para medir pesos con precisión y facilidad. Funciona a través de la combinación de cuatro componentes principales: el módulo HX711, celda de carga de 1 kg,  Arduino Uno y una pantalla LCD.
-  </li>
-<li>El módulo HX711 amplifica y convierte la señal eléctrica generada por la celda de carga en una señal digital que puede ser procesada por el Arduino Uno. La celda de carga es un componente sensible a la fuerza que se encarga de medir el peso aplicado.
-  </li>
-
-<li>El Arduino Uno, a su vez, recibe y procesa la señal digital generada por el módulo HX711 y, con la ayuda de un programa de código abierto, calcula el peso y lo muestra en la pantalla LCD. La pantalla LCD es una pantalla de cristal líquido que muestra la lectura de peso en tiempo real y permite visualizar el peso de un objeto de forma clara y fácil de leer.
-  </li>
-
-<li>    Esta combinación de componentes ofrece una solución precisa y confiable para medir pesos en una amplia variedad de aplicaciones, incluyendo la medición de peso en un laboratorio o en una tienda. Además, su diseño es compacto y fácil de usar, lo que lo hace ideal para su uso en diferentes entornos.
+<li> El batidor es un sistema electromecanico desarrollado que nos permite batir una mezcla solida-liquida a la cantidad de RPM deseados. Este esta formado principalmente por 4 componentes: Arduino Nano (Microcontrolador), Motor paso a paso (Nema 17), driver (DRV8825) y encoder(FC-03).
+    </li>
+<li> El Arduino Nano actúa como el cerebro del sistema y es el encargado de enviar señales de control al driver del motor. El motor paso a paso Nema 17 es el componente que convierte las señales de control en movimiento mecánico. El driver DRV8825 se encarga de amplificar la señal de control del microcontrolador y suministrar la corriente necesaria para controlar el motor paso a paso. Por último, El encoder FC-03 es un sensor que se utiliza para medir la velocidad real del motor paso a paso en RPM.
    </li>
+
+<li>La integración del sistema se realiza mediante la programación del microcontrolador Arduino Nano. El programa de control se encarga de leer las señales del encoder, determinar la posición y velocidad actual del motor, y enviar señales de control al driver para ajustar la velocidad y la posición del motor. Además, se utiliza la librería Continuous Stepper que nos facilita el control continuo del motor paso a paso.
+    </li>
+
+
 </ul>
 </div>
 
@@ -195,7 +194,7 @@ for the JavaScript code in this tag.
 <ul class="org-ul">
 
   <center>
-<img src='img/Esquematico_balanza.jpeg' width=66%>
+<img src='img/Esquematico_Girador.jpg' width=66%>
 </center>
 
 
@@ -204,55 +203,43 @@ for the JavaScript code in this tag.
 
 Lista de materiales: 
 <p>
-<b>1: Convertidor de analógico a digital de 24 bits para básculas de peso (HX711)</b> 
-<ul>
-    <li>Suministro de voltaje: 2.6V-5.5V</li>
-    <li>Corriente: &lt;&lt;1.6mA</li>
-    <li>Regulador de fuente de alimentación en chip para celda de carga y fuente de alimentación analógica ADC</li>
-    <li>Oscilador en chip que no requiere ningún componente externo con cristal externo opcional</li>
-    <li>Temperatura de operación: -40-85°C</li>
-    <li>Rechazo de suministro simultáneo de 50 y 60 Hz</li>
+<b>1: Motor paso a paso (Nema 17)</b> 
+  <ul>
+    <li>Tamaño: 42mm x 42mm</li>
+    <li> Ángulo de paso: 1.8 grados por paso.</li>
+    <li> Par de retención: 0.5Nm.</li>
+    <li>Corriente nominal: 1.8 A. </li>
+   <li>Velocidad máxima: 300 RPM.</li>
+    <li>Precisión:+/- 5 %</li>
 </ul>
 </p>
 <p>
-<b>2: Celda de carga 1kg</b> 
+<b>2: Driver 8825 (Nema 17)</b> 
 <ul>
-    <li>Rango 0-1kg</li>
-    <li>Voltaje de excitación: 5-15V</li>
-    <li>Impedancia de entrada 1055±15Ω</li>
-    <li>Impedancia de salida 1000±5Ω</li>
-    <li>Sensibilidad de salida: 1.0±0.15mV/V</li>
-    <li>Salida: Señal análoga</li>
-    <li>Desplazamiento del cero:0.05/0.03 30min %F.S</li>
-    <li>Capacidad de sobrecarga: 200 %F.S</li>
+    <li>Tensión de alimentación: 12V.g</li>
+    <li>Corriente de salida: Hasta 2.5A por bobina.</li>
+    <li> Resolución: 1/32 pasos.</li>
 </ul>
 </p>
 <p>
-<b>3: Arduino</b> 
+<b>3: Encoder FC-03</b> 
+<ul>
+    <li>Dimensiones: 38mm x 35mm x 27 mm.</li>
+    <li>Tensión de alimentación: 10mA.</li>
+    <li>Frecuencia de respuesta: 100KHz.</li>
+    <li>Resolución: 20 pulsos por revolución.</li>
+</ul>
+</p>
 
+<p>
+El controlador DRV8825 es un controlador de micro-pasos para controlar motores paso a paso bipolares que tienen un traductor incorporado para una fácil operación. Por lo tanto, se puede controlar el motor paso a paso con solo 2 pines desde el controlador Arduino. El pin DIR controlará la dirección de rotación y el pin STEP controlará los pasos.
 </p>
 <p>
-<b>4: Pantalla LCD</b> 
+El controlador DRV8825 se alimenta con una fuente de alimentación de 12V y el pin VDD se alimenta con una fuente de 5V. Se recomienda colocar un gran condensador electrolítico de desacoplamiento de 100µF a través de los pines de alimentación del motor, cerca de la placa.
 </p>
-
-
-
-En general, un sensor de peso, también conocido como célula de carga, se conecta a un Arduino a través de un módulo amplificador HX711. El HX711 es necesario porque las señales de la célula de carga son muy pequeñas y necesitan ser amplificadas para que el Arduino pueda leerlas. Normalmente, la célula de carga tiene cuatro cables: rojo (alimentación), negro (tierra), verde (señal +) y blanco (señal -). Estos se conectan a los correspondientes pines del módulo HX711. Luego, el módulo HX711 se conecta al Arduino: el pin de datos (DT o DOUT) del HX711 se conecta a un pin digital del Arduino, y el pin de reloj (SCK) del HX711 se conecta a otro pin digital del Arduino.
-
-<ul>
-    <li>Conexión de los componentes: Para utilizar la balanza, es necesario conectar la celda de carga al módulo HX711, y el módulo HX711 al Arduino. Las conexiones eléctricas requeridas son las siguientes:</li>
-        <ul>
-            <li>Celda de carga: conectar los cables rojo y negro de la celda de carga a los pines E+ y E- del módulo HX711, respectivamente. Conectar los cables blanco y verde de la celda de carga a los pines A+ y A- del módulo HX711, respectivamente.</li>
-            <li>Módulo HX711: conectar los pines DT y SCK del módulo HX711 a los pines digitales 3 y 2 del Arduino, respectivamente. Conectar los pines VCC y GND del módulo HX711 a los pines de 5V y GND del Arduino, respectivamente.</li>
-        </ul>
-    <li>Calibración de la balanza: Antes de utilizar la balanza, es necesario realizar una calibración para asegurarse de que las mediciones sean precisas y confiables. Para calibrar la balanza, es necesario seguir los siguientes pasos:</li>
-        <ul>
-            <li>Colocar un objeto de peso conocido sobre la plataforma de la balanza.</li>
-            <li>Registrar la lectura de peso en el programa de Arduino.</li>
-            <li>Utilizar la función de ajuste de la balanza para ajustar la constante de calibración. La constante de calibración se utiliza para convertir las lecturas de voltaje del módulo HX711 en lecturas de peso en kilogramos o libras. La función de ajuste utiliza las lecturas de peso conocido y sus correspondientes lecturas de voltaje para calcular la constante de calibración.</li>
-        </ul>
-</ul>
-
+<p>
+El motor paso a paso NEMA17 se conecta a los pines 1A, 1B, 2A y 2B del DRV8825. Los pines de dirección (DIR) y paso (STEP) del DRV8825 se conectan a los pines digitales D2 y D3 del Arduino, respectivamente.
+</p>
 </div>
 </div>
 
@@ -277,55 +264,48 @@ En general, un sensor de peso, también conocido como célula de carga, se conec
 <ul class="org-ul">
 
 
-
-
-
-
-<p>A continuación se presenta la curva de calibración de la balanza:</p>
+<p>A continuación se presenta la curva de calibración del mezclador:</p>
 
 <center>
-<img src='img/Calibracion_balanza.jpeg' width=66%>
+<img src='img/Calibracion_girador.png' width=80%>
 </center>
 <center>
-<table>
-    <caption>Datos Calibración balanza: </caption>
-    <tr>
-        <th>Peso real (g)</th>
-        <th>Peso balanza (g)</th>
-    </tr>
-    <tr>
-        <td>99.4</td>
-        <td>99.54</td>
-    </tr>
-    <tr>
-        <td>200</td>
-        <td>199.86</td>
-    </tr>
-    <tr>
-        <td>300</td>
-        <td>300.22</td>
-    </tr>
-    <tr>
-        <td>400</td>
-        <td>399.82</td>
-    </tr>
-    <tr>
-        <td>491</td>
-        <td>492.2</td>
-    </tr>
-    <tr>
-        <td>591</td>
-        <td>592.6</td>
-    </tr>
-    <tr>
-        <td>690</td>
-        <td>692.38</td>
-    </tr>
-    <tr>
-        <td>791</td>
-        <td>792.62</td>
-    </tr>
+  <table>
+  <caption>Datos de calibración motor paso a paso</caption>
+  <tr>
+    <th>Pasos por segundo</th>
+    <th>RPM</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>250</td>
+    <td>19</td>
+  </tr>
+  <tr>
+    <td>500</td>
+    <td>38</td>
+  </tr>
+  <tr>
+    <td>750</td>
+    <td>56</td>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>74</td>
+  </tr>
+  <tr>
+    <td>1250</td>
+    <td>94</td>
+  </tr>
+  <tr>
+    <td>1500</td>
+    <td>112</td>
+  </tr>
 </table>
+
 </center>
 
 </div>
