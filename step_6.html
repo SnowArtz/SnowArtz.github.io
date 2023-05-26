@@ -149,12 +149,12 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Balanza digital</h1>
+<h1 class="title">IOT</h1>
 <div id="table-of-contents">
 <h2>Tabla de contenidos</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Balanza digital</a>
+<li><a href="#sec-1">1. IOT</a>
   <li><a href="#sec-2">2. Esquemático</a>
     <li><a href="#sec-3">3. Macroalgoritmo</a>
       <li><a href="#sec-4">4. Calibración</a>
@@ -169,24 +169,23 @@ for the JavaScript code in this tag.
 <a href="./index.html">Volver al inicio</a>
 </div>
 <center>
-<img src='img/Foto_balanza.jpeg' width=66%>
+<img src='img/IOT.jpg' width=66%>
 </center>
 
 <div id="outline-container-sec-1" class="outline-2 activity">
-<h2 id="sec-1"><span class="section-number-2">1</span> Balanza digital</h2>
+<h2 id="sec-1"><span class="section-number-2">1.</span> IOT</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
-<li> Esta balanza digital es un dispositivo diseñado para medir pesos con precisión y facilidad. Funciona a través de la combinación de cuatro componentes principales: el módulo HX711, celda de carga de 1 kg,  Arduino Uno y una pantalla LCD.
-  </li>
-<li>El módulo HX711 amplifica y convierte la señal eléctrica generada por la celda de carga en una señal digital que puede ser procesada por el Arduino Uno. La celda de carga es un componente sensible a la fuerza que se encarga de medir el peso aplicado.
-  </li>
-
-<li>El Arduino Uno, a su vez, recibe y procesa la señal digital generada por el módulo HX711 y, con la ayuda de un programa de código abierto, calcula el peso y lo muestra en la pantalla LCD. La pantalla LCD es una pantalla de cristal líquido que muestra la lectura de peso en tiempo real y permite visualizar el peso de un objeto de forma clara y fácil de leer.
-  </li>
-
-<li>    Esta combinación de componentes ofrece una solución precisa y confiable para medir pesos en una amplia variedad de aplicaciones, incluyendo la medición de peso en un laboratorio o en una tienda. Además, su diseño es compacto y fácil de usar, lo que lo hace ideal para su uso en diferentes entornos.
-   </li>
-</ul>
+        <li><strong>Interfaz de Usuario Móvil:</strong> El proyecto incluye una aplicación para dispositivos móviles desarrollada específicamente para controlar la chocolatera. Esta aplicación brinda a los usuarios la comodidad de operar la máquina desde cualquier lugar y en cualquier momento a través de sus smartphones, haciendo que el proceso de producción de chocolate sea más flexible y accesible.</li>
+        <br>
+        <li><strong>Conectividad Bluetooth:</strong> La aplicación se comunica con la chocolatera a través de la tecnología Bluetooth. Esto permite una conexión inalámbrica directa y segura entre la aplicación móvil y la máquina, facilitando el control en tiempo real de las diversas funciones de la chocolatera sin la necesidad de estar físicamente presente junto a la máquina.</li>
+        <br>
+        <li><strong>Control Total a través de la Aplicación:</strong> La aplicación proporciona control sobre todas las funciones de la chocolatera. Desde la medición precisa de ingredientes hasta la supervisión de la temperatura y las RPM del mezclador, los usuarios pueden gestionar todos los aspectos de la producción de chocolate directamente desde la palma de su mano.</li>
+        <br>
+        <li><strong>Dashboard de Información:</strong> Además del control de funciones, la aplicación ofrece un panel de información que muestra una visión completa y detallada del proceso de producción en tiempo real. Los usuarios pueden monitorizar fácilmente aspectos como la temperatura, las RPM, el peso del agua y otros datos cruciales para garantizar la calidad del producto final.</li>
+        <br>
+        <li><strong>Ventajas de Implementar IoT:</strong> La implementación de la tecnología IoT en este proyecto aporta varias ventajas. Entre ellas, la capacidad de supervisar y controlar la producción de chocolate de forma remota, lo que mejora la eficiencia y la flexibilidad. También permite recopilar datos en tiempo real que pueden ser utilizados para análisis y mejora continua del proceso de producción. Además, la IoT aumenta la adaptabilidad de la máquina al permitir la implementación de actualizaciones y mejoras de software que pueden optimizar aún más el rendimiento de la chocolatera.</li>
+    </ul>
 </div>
 
 <div id="outline-container-sec-1-1" class="outline-3 build">
@@ -195,64 +194,43 @@ for the JavaScript code in this tag.
 <ul class="org-ul">
 
   <center>
-<img src='img/Esquematico_balanza.jpeg' width=66%>
+<img src='img/Arduino-Bluetooth1.png' width=66%>
 </center>
 
 
 
 </ul>
 
-Lista de materiales: 
-<p>
-<b>1: Convertidor de analógico a digital de 24 bits para básculas de peso (HX711)</b> 
-<ul>
-    <li>Suministro de voltaje: 2.6V-5.5V</li>
-    <li>Corriente: &lt;&lt;1.6mA</li>
-    <li>Regulador de fuente de alimentación en chip para celda de carga y fuente de alimentación analógica ADC</li>
-    <li>Oscilador en chip que no requiere ningún componente externo con cristal externo opcional</li>
-    <li>Temperatura de operación: -40-85°C</li>
-    <li>Rechazo de suministro simultáneo de 50 y 60 Hz</li>
-</ul>
-</p>
-<p>
-<b>2: Celda de carga 1kg</b> 
-<ul>
-    <li>Rango 0-1kg</li>
-    <li>Voltaje de excitación: 5-15V</li>
-    <li>Impedancia de entrada 1055±15Ω</li>
-    <li>Impedancia de salida 1000±5Ω</li>
-    <li>Sensibilidad de salida: 1.0±0.15mV/V</li>
-    <li>Salida: Señal análoga</li>
-    <li>Desplazamiento del cero:0.05/0.03 30min %F.S</li>
-    <li>Capacidad de sobrecarga: 200 %F.S</li>
-</ul>
-</p>
-<p>
-<b>3: Arduino</b> 
+<p><b>Lista de materiales: </b></p>
 
-</p>
-<p>
-<b>4: Pantalla LCD</b> 
-</p>
-
-
-
-En general, un sensor de peso, también conocido como célula de carga, se conecta a un Arduino a través de un módulo amplificador HX711. El HX711 es necesario porque las señales de la célula de carga son muy pequeñas y necesitan ser amplificadas para que el Arduino pueda leerlas. Normalmente, la célula de carga tiene cuatro cables: rojo (alimentación), negro (tierra), verde (señal +) y blanco (señal -). Estos se conectan a los correspondientes pines del módulo HX711. Luego, el módulo HX711 se conecta al Arduino: el pin de datos (DT o DOUT) del HX711 se conecta a un pin digital del Arduino, y el pin de reloj (SCK) del HX711 se conecta a otro pin digital del Arduino.
+<p><b>1. Arduino</b></p>
+    <ul>
+        <li>Tipo y modelo de placa: Arduino Uno</li>
+        <li>Microcontrolador: ATmega328P</li>
+        <li>Programación: Lenguaje C++ y entorno de programación Arduino IDE</li>
+        <li>Rango de voltaje: 5VDC</li>
+        <li>Rango de temperatura: -40°C a 85°C</li>
+    </ul>
+</li>
+<p> <b>2. Módulo Bluetooth HC-06 </b>   </p>
 
 <ul>
-    <li>Conexión de los componentes: Para utilizar la balanza, es necesario conectar la celda de carga al módulo HX711, y el módulo HX711 al Arduino. Las conexiones eléctricas requeridas son las siguientes:</li>
-        <ul>
-            <li>Celda de carga: conectar los cables rojo y negro de la celda de carga a los pines E+ y E- del módulo HX711, respectivamente. Conectar los cables blanco y verde de la celda de carga a los pines A+ y A- del módulo HX711, respectivamente.</li>
-            <li>Módulo HX711: conectar los pines DT y SCK del módulo HX711 a los pines digitales 3 y 2 del Arduino, respectivamente. Conectar los pines VCC y GND del módulo HX711 a los pines de 5V y GND del Arduino, respectivamente.</li>
-        </ul>
-    <li>Calibración de la balanza: Antes de utilizar la balanza, es necesario realizar una calibración para asegurarse de que las mediciones sean precisas y confiables. Para calibrar la balanza, es necesario seguir los siguientes pasos:</li>
-        <ul>
-            <li>Colocar un objeto de peso conocido sobre la plataforma de la balanza.</li>
-            <li>Registrar la lectura de peso en el programa de Arduino.</li>
-            <li>Utilizar la función de ajuste de la balanza para ajustar la constante de calibración. La constante de calibración se utiliza para convertir las lecturas de voltaje del módulo HX711 en lecturas de peso en kilogramos o libras. La función de ajuste utiliza las lecturas de peso conocido y sus correspondientes lecturas de voltaje para calcular la constante de calibración.</li>
-        </ul>
+  <li>Interfaz: Serial UART</li>
+  <li>Versión Bluetooth: 2.0+EDR</li>
+  <li>Distancia de transmisión: Hasta 10 metros</li>
+  <li>Tensión de funcionamiento: 3.3V</li>
+  <li>Consumo de corriente: 30 mA en funcionamiento</li>
 </ul>
 
+<p><b>Conexiones: </b></p>
+
+El módulo Bluetooth HC-06 es un dispositivo que permite la comunicación inalámbrica entre un Arduino Uno y otros dispositivos habilitados para Bluetooth, como teléfonos inteligentes o computadoras. Funciona como un enlace serial entre el Arduino y el dispositivo conectado. Para establecer una conexión, se requieren las siguientes conexiones:
+<ul  class="org-ul">
+    <li>Conecta el pin VCC del módulo HC-06 al pin de alimentación de 5V del Arduino Uno.</li>
+    <li>Conecta el pin GND del módulo HC-06 al pin GND del Arduino Uno.</li>
+    <li>Conecta el pin RXD del módulo HC-06 al pin TX del Arduino Uno.</li>
+    <li>Conecta el pin TXD del módulo HC-06 al pin RX del Arduino Uno.</li>
+  </ul>
 </div>
 </div>
 
@@ -262,7 +240,7 @@ En general, un sensor de peso, también conocido como célula de carga, se conec
 <ul class="org-ul">
 
   <center>
-<img src='img/Macroalgoritmo_balanza.jpeg' width=66%>
+<img src='img/blocks (1).png' width=100%>
 </center>
 
 </ul>
@@ -272,68 +250,9 @@ En general, un sensor de peso, también conocido como célula de carga, se conec
 </div>
 
 <div id="outline-container-sec-1-3" class="outline-3 code">
-<h3 id="sec-4">Calibración</h3>
-<div class="outline-text-3" id="text-1-1">
-<ul class="org-ul">
+<h3 id="sec-4">Screenshots de la aplicación</h3>
 
-
-
-
-
-
-<p>A continuación se presenta la curva de calibración de la balanza:</p>
-
-<center>
-<img src='img/Calibracion_balanza.jpeg' width=66%>
-</center>
-<center>
-<table>
-    <caption>Datos Calibración balanza: </caption>
-    <tr>
-        <th>Peso real (g)</th>
-        <th>Peso balanza (g)</th>
-    </tr>
-    <tr>
-        <td>99.4</td>
-        <td>99.54</td>
-    </tr>
-    <tr>
-        <td>200</td>
-        <td>199.86</td>
-    </tr>
-    <tr>
-        <td>300</td>
-        <td>300.22</td>
-    </tr>
-    <tr>
-        <td>400</td>
-        <td>399.82</td>
-    </tr>
-    <tr>
-        <td>491</td>
-        <td>492.2</td>
-    </tr>
-    <tr>
-        <td>591</td>
-        <td>592.6</td>
-    </tr>
-    <tr>
-        <td>690</td>
-        <td>692.38</td>
-    </tr>
-    <tr>
-        <td>791</td>
-        <td>792.62</td>
-    </tr>
-</table>
-</center>
-
-</div>
-</div>
-
-
-</li>
-</ul>
+    <img src="img\Captura de pantalla 2023-05-26 022004.png" style="width: 100%;" alt="Screenshot 1">
 
 </div>
 </body>
